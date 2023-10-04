@@ -3,10 +3,12 @@ import Dropdown from './../../components/dropdown/Dropdown';
 import TextInput from './../../components/text-input/TextInput';
 import DatePicker from './../../components/date-picker/DatePicker';
 import Button from './../../components/button/Button';
+import styles from './styles';
 
 function Registration() {
+
   return (
-    <form>
+    <form noValidate>
       <Dropdown />
       <TextInput />
       <TextInput />
