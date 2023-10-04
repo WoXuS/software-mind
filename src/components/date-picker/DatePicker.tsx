@@ -1,7 +1,8 @@
 import React from 'react';
 import styles from './styles';
+import { InputProps } from '../../interfaces';
 
-function DatePicker() {
+function DatePicker({ control, name, label }: InputProps) {
   return <div>DatePicker</div>;
 }
 
