@@ -2,8 +2,38 @@ import React from 'react';
 import styles from './styles';
 import { InputProps } from '../../interfaces';
 
+import { TextField } from '@mui/material';
+import { useController } from 'react-hook-form';
+
 function TextInput({ control, name, label, required }: InputProps) {
-  return <div>TextInput</div>;
+  const {
+    field,
+    fieldState: { error, invalid },
+  } = useController({
+    name,
+    control,
+  });
+
+  return (
+    <TextField
+      onChange={field.onChange}
+      onBlur={field.onBlur}
+      value={field.value}
+      name={field.name}
+      inputRef={field.ref}
+      type={field.name}
+      label={label}
+      variant='standard'
+      margin='dense'
+      fullWidth
+      required={required}
+      autoComplete={name}
+      autoFocus
+      color='primary'
+      error={invalid}
+      helperText={invalid ? error?.message : null}
+    />
+  );
 }
 
 export default TextInput;

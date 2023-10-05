@@ -26,7 +26,7 @@ function Dropdown({ control, name, label }: InputProps) {
 
   return (
     <Autocomplete
-      {...field}
+      value={typeof field.value === 'string' ? field.value : null}
       clearOnEscape
       disablePortal
       filterSelectedOptions

@@ -1,8 +1,8 @@
 import React from 'react';
 import Dropdown from './../../components/dropdown/Dropdown';
 import TextInput from './../../components/text-input/TextInput';
-import DatePicker from './../../components/date-picker/DatePicker';
-import Button from './../../components/button/Button';
+import DobDatePicker from '../../components/date-picker/DobDatePicker';
+import SubmitButton from '../../components/button/SubmitButton';
 import styles from './styles';
 import { FormValues } from '../../interfaces';
 
@@ -24,6 +24,7 @@ function Registration() {
 
   const submitForm = (data: Object) => {
     alert('success');
+    console.log(data);
   };
 
   return (
@@ -31,8 +32,8 @@ function Registration() {
       <Dropdown control={control} name={'continent'} label={'Kontynent'} />
       <TextInput control={control} name={'firstName'} label={'Imię'} required />
       <TextInput control={control} name={'surname'} label={'Nazwisko'} />
-      <DatePicker control={control} name={'dob'} label={'Data urodzenia'} />
-      <Button disabled={!isValid} />
+      <DobDatePicker control={control} name={'dob'} label={'Data urodzenia'} />
+      <SubmitButton disabled={!isValid} />
     </form>
   );
 }

@@ -1,10 +1,11 @@
 import { Control } from 'react-hook-form';
+import { Dayjs } from 'dayjs';
 
 export type FormValues = {
   continent: string | null;
   firstName: string;
   surname: string;
-  dob: string | null;
+  dob: Dayjs | null;
 };
 
 export interface InputProps {
