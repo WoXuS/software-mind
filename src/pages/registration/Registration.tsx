@@ -35,6 +35,9 @@ function Registration() {
       setSuccess(true);
       setLoading(false);
     }, 2000);
+    setTimeout(() => {
+      setSuccess(false);
+    }, 7000);
   };
 
   return (
