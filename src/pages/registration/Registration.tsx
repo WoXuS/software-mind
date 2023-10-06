@@ -9,12 +9,13 @@ import registrationSchema from './registrationSchema';
 
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { Container, Typography } from '@mui/material';
 
 function Registration() {
   const {
     handleSubmit,
     control,
-    formState: { isValid },
+    formState: { isValid, isSubmitted },
   } = useForm<FormValues>({
     defaultValues: {
       continent: null,
@@ -31,13 +32,28 @@ function Registration() {
   };
 
   return (
-    <form noValidate onSubmit={handleSubmit(submitForm)}>
-      <Dropdown control={control} name={'continent'} label={'Kontynent'} />
-      <TextInput control={control} name={'firstName'} label={'Imię'} required />
-      <TextInput control={control} name={'surname'} label={'Nazwisko'} />
-      <DobDatePicker control={control} name={'dob'} label={'Data urodzenia'} />
-      <SubmitButton disabled={!isValid} />
-    </form>
+    <Container maxWidth='xs' sx={styles.container}>
+      <Typography variant='h2' color={"secondary"} fontWeight='bold'>
+        Formularz
+      </Typography>
+      <Typography variant='h5'>Wprowadź dane</Typography>
+      <form noValidate onSubmit={handleSubmit(submitForm)}>
+        <Dropdown control={control} name={'continent'} label={'Kontynent'} />
+        <TextInput
+          control={control}
+          name={'firstName'}
+          label={'Imię'}
+          required
+        />
+        <TextInput control={control} name={'surname'} label={'Nazwisko'} />
+        <DobDatePicker
+          control={control}
+          name={'dob'}
+          label={'Data urodzenia'}
+        />
+        <SubmitButton disabled={!isValid && isSubmitted} />
+      </form>
+    </Container>
   );
 }
 

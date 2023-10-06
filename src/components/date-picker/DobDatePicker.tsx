@@ -62,7 +62,6 @@ function DobDatePicker({ control, name, label }: InputProps) {
         textField: {
           variant: 'standard',
           margin: 'dense',
-          color: 'primary',
           name: field.name,
           error: invalid,
           helperText: invalid ? error?.message : null,

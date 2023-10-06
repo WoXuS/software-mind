@@ -6,7 +6,7 @@ import { Button } from '@mui/material';
 function SubmitButton({ disabled }: { disabled: boolean }) {
   return (
     <Button
-      color='primary'
+      sx={styles.button}
       variant='contained'
       type='submit'
       fullWidth

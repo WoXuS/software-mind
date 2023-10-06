@@ -1,0 +1,42 @@
+.logo-container {
+  width: 60%;
+  height: 100%;
+  background: #f5f7fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.logo-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(94.17deg, rgb(18, 38, 77) 2.01%, rgb(132, 12, 49) 13.67%, rgb(199, 9, 39) 25.48%, rgb(252, 102, 35) 37.39%, rgb(255, 189, 48) 49.62%);
+  opacity: 0;
+  transition: opacity .4s ease-in-out;
+  pointer-events: none;
+}
+
+.logo-container.gradient-bg::before {
+  opacity: 1;
+}
+
+.logo {
+  width: 50%;
+  z-index: 100;
+  transition: all .4s ease-in-out;
+}
+
+.logo:hover {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+}
+
+@media (max-width: 1200px) {
+  .logo-container {
+    display: none;
+  }
+}

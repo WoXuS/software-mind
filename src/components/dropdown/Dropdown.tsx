@@ -41,7 +41,6 @@ function Dropdown({ control, name, label }: InputProps) {
           inputRef={ref}
           variant='standard'
           margin='dense'
-          color='primary'
           autoComplete='off'
           {...params}
         />

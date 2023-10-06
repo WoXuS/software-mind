@@ -1,4 +1,10 @@
 const styles = {
-  form: {},
+  container: {
+    textAlign: 'center',
+    margin: 'unset',
+    '& > h2, & > h5': { marginBottom: '1rem' },
+    '& > form > div': { marginBottom: '1.5rem' },
+    '& > form > button': { marginTop: '2rem' },
+  },
 };
 export default styles;

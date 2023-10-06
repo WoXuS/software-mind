@@ -1,5 +1,3 @@
-// yup.d.ts
-
 import { AnyObject, BaseSchema } from "yup";
 
 declare module "yup" {

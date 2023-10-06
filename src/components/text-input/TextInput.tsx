@@ -29,7 +29,6 @@ function TextInput({ control, name, label, required }: InputProps) {
       required={required}
       autoComplete={name}
       autoFocus
-      color='primary'
       error={invalid}
       helperText={invalid ? error?.message : null}
     />
