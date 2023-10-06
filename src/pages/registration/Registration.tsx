@@ -5,8 +5,10 @@ import DobDatePicker from '../../components/date-picker/DobDatePicker';
 import SubmitButton from '../../components/button/SubmitButton';
 import styles from './styles';
 import { FormValues } from '../../interfaces';
+import registrationSchema from './registrationSchema';
 
 import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
 
 function Registration() {
   const {
@@ -20,6 +22,7 @@ function Registration() {
       surname: '',
       dob: null,
     },
+    resolver: yupResolver<FormValues>(registrationSchema as any),
   });
 
   const submitForm = (data: Object) => {
