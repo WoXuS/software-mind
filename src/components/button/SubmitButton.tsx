@@ -1,20 +1,31 @@
 import React from 'react';
 import styles from './styles';
 
-import { Button } from '@mui/material';
+import { Button, CircularProgress } from '@mui/material';
 
-function SubmitButton({ disabled }: { disabled: boolean }) {
+type ButtonProps = {
+  loading: boolean;
+  disabled: boolean;
+};
+
+function SubmitButton({ disabled, loading }: ButtonProps) {
   return (
-    <Button
-      sx={styles.button}
-      variant='contained'
-      type='submit'
-      fullWidth
-      disabled={disabled}
-      size='large'
-    >
-      Wyślij
-    </Button>
+    <>
+      {loading ? (
+        <CircularProgress />
+      ) : (
+        <Button
+          sx={styles.button}
+          variant='contained'
+          type='submit'
+          fullWidth
+          disabled={disabled}
+          size='large'
+        >
+          Wyślij
+        </Button>
+      )}
+    </>
   );
 }
 

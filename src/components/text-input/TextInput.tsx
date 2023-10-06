@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from './styles';
 import { InputProps } from '../../interfaces';
 
 import { TextField } from '@mui/material';

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Dropdown from './../../components/dropdown/Dropdown';
 import TextInput from './../../components/text-input/TextInput';
 import DobDatePicker from '../../components/date-picker/DobDatePicker';
@@ -12,6 +12,9 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { Container, Typography } from '@mui/material';
 
 function Registration() {
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+
   const {
     handleSubmit,
     control,
@@ -27,13 +30,16 @@ function Registration() {
   });
 
   const submitForm = (data: Object) => {
-    alert('success');
-    console.log(data);
+    setLoading(true);
+    setTimeout(() => {
+      setSuccess(true);
+      setLoading(false);
+    }, 2000);
   };
 
   return (
     <Container maxWidth='xs' sx={styles.container}>
-      <Typography variant='h2' color={"secondary"} fontWeight='bold'>
+      <Typography variant='h2' color='secondary' fontWeight='bold'>
         Formularz
       </Typography>
       <Typography variant='h5'>Wprowadź dane</Typography>
@@ -51,7 +57,12 @@ function Registration() {
           name={'dob'}
           label={'Data urodzenia'}
         />
-        <SubmitButton disabled={!isValid && isSubmitted} />
+        {success && (
+          <Typography sx={styles.successMsg}>
+            ✓ Formularz został przesłany.
+          </Typography>
+        )}
+        <SubmitButton disabled={!isValid && isSubmitted} loading={loading} />
       </form>
     </Container>
   );
