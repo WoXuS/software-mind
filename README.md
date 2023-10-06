@@ -1,46 +1,52 @@
-# Getting Started with Create React App
+# Form Page
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![React](https://img.shields.io/badge/React-18.2.8-blue)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-4.9.5-blue)](https://www.typescriptlang.org/)
+[![MUI](https://img.shields.io/badge/MUI-5.14.11-blue)](https://mui.com/)
+[![React Hook Form](https://img.shields.io/badge/React%20Hook%20Form-7.47-blue)](https://react-hook-form.com/)
+[![Yup](https://img.shields.io/badge/Yup-1.3.2-blue)](https://github.com/jquense/yup)
 
-## Available Scripts
+A simple, user-friendly and fully responsive website featuring a form built using React 18, TypeScript 5, MUI 5, React Hook Form 7, and Yup. This project consists of a form with four input fields (including a MUI datepicker) containing various validation rules. 
 
-In the project directory, you can run:
+## Screenshots
 
-### `npm start`
+![Simple form](./assets/form-screenshot.jpg)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![Logo hover](./assets/logo-hover.jpg)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Table of Contents
 
-### `npm test`
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features
 
-### `npm run build`
+- A form with four input fields validated by various rules:
+    - If a chosen continent is Europe, then the surname (if filled in) must have more than two characters.
+    - A required name field.
+    - Doubling the font size if user's age is above 60 years with edge case handling of a possibility to have a birthday today.
+- Elegant hover on the logo.
+- Disabling the submit button if validation rules are not met.
+- After the initial submit, the validation is run onChange.
+- Simulated two second loading with an animated loading icon after submitting the form.
+- Success message displayed after the loading icon.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To get started, clone the repository and install the dependencies:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+git clone https://github.com/WoXuS/software-mind.git
+cd software-mind
+npm install
+```
 
-### `npm run eject`
+## Usage
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+To start the development server, run:
+```bash
+npm start
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Open http://localhost:3000 to view the registration module in your browser.

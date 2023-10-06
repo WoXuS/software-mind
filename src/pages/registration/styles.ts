@@ -8,6 +8,7 @@ const styles = {
   },
   successMsg: {
     color: 'rgb(102, 187, 106)',
+    fontWeight: 700,
   },
 };
 export default styles;
